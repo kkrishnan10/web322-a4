@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= project.title %></title>
+  <link href="/css/main.css" rel="stylesheet" />
+</head>
+<body>
+  <%- include('partials/navbar', { page: '' }) %>
+
+  <section class="hero bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold"><%= project.title %></h1>
+        <p class="py-6">Below, you will find detailed information about this project.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-5">
+    <img src="<%= project.feature_img_url %>" alt="Project Image" class="mx-auto rounded shadow" />
+    <p class="py-2"><%= project.intro_short %></p>
+    <p class="py-2 font-bold">Impact: <%= project.impact %></p>
+    <a class="btn btn-primary" href="<%= project.original_source_url %>" target="_blank">More Info</a>
+    <br/><br/>
+    <a class="btn" href="#" onclick="history.back(); return false;">Back</a>
+
+    <div id="quote" class="mt-4 italic text-gray-500"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('https://dummyjson.com/quotes/random')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("quote").innerHTML = `"${data.quote}" - ${data.author}`;
+        });
+    });
+  </script>
+</body>
+</html>
+

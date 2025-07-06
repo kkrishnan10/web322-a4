@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects</title>
+  <link href="/css/main.css" rel="stylesheet" />
+</head>
+<body>
+  <%- include('partials/navbar', { page: '/solutions/projects' }) %>
+
+  <section class="hero bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Projects</h1>
+        <p class="py-6">Explore our projects below.</p>
+
+       
+        <div class="space-x-2">
+          <a class="btn" href="/solutions/projects?sector=Energy">Energy</a>
+          <a class="btn" href="/solutions/projects?sector=Transportation">Transportation</a>
+          <a class="btn" href="/solutions/projects?sector=Industry">Industry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="overflow-x-auto">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Sector</th>
+          <th>Summary</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% projects.forEach(project => { %>
+        <tr>
+          <td><%= project.title %></td>
+          <td><a class="btn btn-sm" href="/solutions/projects?sector=<%= project.sector %>"><%= project.sector %></a></td>
+          <td><%= project.summary_short %></td>
+          <td><a class="btn btn-sm" href="/solutions/projects/<%= project.id %>">Details</a></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+

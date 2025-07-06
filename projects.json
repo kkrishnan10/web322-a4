@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Solar Roofs",
+    "sector": "Energy",
+    "summary_short": "Installing solar panels in urban homes to reduce emissions.",
+    "intro_short": "An introduction to the solar roofs project.",
+    "impact": "Reduces household carbon footprint by 30%.",
+    "feature_img_url": "/img/solar.jpeg",
+    "original_source_url": "https://example.com/solar"
+  },
+  {
+    "id": 2,
+    "title": "EV Charging Stations",
+    "sector": "Transportation",
+    "summary_short": "Deploying electric vehicle chargers across the country.",
+    "intro_short": "An introduction to EV charging stations project.",
+    "impact": "Enables electric vehicle adoption.",
+    "feature_img_url": "/img/ev.jpeg",
+    "original_source_url": "https://example.com/ev"
+  }
+]
+
